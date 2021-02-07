@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import path from 'path';
 
-const path = require('path');
 
 dotenv.config();
 
@@ -9,12 +9,14 @@ const {
   PORT: port = 3000,
 } = process.env;
 
+const dirname = path.resolve();
 const app = express();
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(dirname, 'public')));
 
-
-// TODO setja upp rest af virkni!
+app.get('/', (req, res) => {
+    res.render('index');
+});
 
 // Verðum að setja bara *port* svo virki á heroku
 app.listen(port, () => {
