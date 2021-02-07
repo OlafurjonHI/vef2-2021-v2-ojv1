@@ -15,9 +15,11 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(dirname, 'public')));
 
 app.get('/', (req, res) => {
-    res.render('index');
+  res.render('index');
 });
-
+app.get('*', (req, res) => {
+  res.render('404');
+});
 // Verðum að setja bara *port* svo virki á heroku
 app.listen(port, () => {
   console.info(`Server running at http://localhost:${port}/`);

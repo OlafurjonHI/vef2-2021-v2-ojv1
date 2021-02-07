@@ -1,7 +1,31 @@
 <%- include('header') -%>
 
   <main class="main">
+    <section class="petitions">
+      <h1>Undirskriftarlisti</h1>
+      <form class="petitions__form">
+        <label for="name">Nafn*
+          <input type="text" name="name" id="name" required>
+        </label>
+        <label for="ssn">Kennitala*
+          <input type="number" name="ssn" id="ssn" placeholder="000000-0000" required>
+        </label>
+        <label for="comment">Athugasemd
+          <textarea name="comment" id="comment"></textarea>
+        </label>
+        <label for="anon">
+          <input type="checkbox" name="anon" id="anon">
+          Ekki birta nafn á lista
+        </label>
 
+        <button class="petitions__button" type="submit">Skrifa undir</button>
+      </form>
+    </section>
+    <hr>
+    <section class="list">
+      <h1>Undirskriftir</h1>
+      <span>Engar Undirskriftir</span>
+    </section>
     
   </main>
 
