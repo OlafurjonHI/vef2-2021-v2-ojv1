@@ -88,7 +88,7 @@ app.post(
   body('name').trim().escape(),
   body('ssn').blacklist('-'),
   body('comment').trim().escape(),
-  async (req, res, next) => {
+  async (req, res) => {
     const {
       name,
       ssn,

@@ -13,7 +13,12 @@ if (!connectionString) {
 }
 
 // TODO gagnagrunnstengingar
-const pool = new pg.Pool({ connectionString });
+const pool = new pg.Pool({
+  connectionString,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
 pool.on('error', (err) => {
   console.error('Unexpected error on idle client', err);
   process.exit(-1);
@@ -46,9 +51,8 @@ const InsertSignatures = async (values) => {
   }
   // await pool.end();
   return result;
-}
+};
 
-
-export { RetrieveSignatures, InsertSignatures};
+export { RetrieveSignatures, InsertSignatures };
 
 export default RetrieveSignatures;
