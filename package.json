@@ -10,6 +10,7 @@
     "lint": "stylelint ./src/scss/styles.scss --syntax scss",
     "eslint": "eslint *.js",
     "nodemon": "nodemon ./src/app.js",
+    "setup": "psql -U postgres vef2-2021-v2 < ./sql/fake.sql",
     "dev": "concurrently npm:sass npm:nodemon"
   },
   "keywords": [],
