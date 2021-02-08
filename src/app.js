@@ -103,12 +103,11 @@ app.post(
     await InsertSignatures([name, ssn, comment, letAnon]).then(async () => {
       await RetrieveSignatures().then((d) => {
         app.locals.list = d.rows;
+      }).then(() => {
+        res.render('index', { errorMessages: null, data: app.locals });
       });
-    }).then(() => {
-      res.render('index',{errorMessages: null, data: app.locals});
-    }).catch((e) => {
+    }).catch(() => {
       res.status(500);
-      console.log(e.message)
       res.render('error');
     });
   },
