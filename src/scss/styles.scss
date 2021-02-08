@@ -81,6 +81,9 @@ main{
             cursor: pointer;
         }
     }
+    &__error {
+        background-color: #ffb7b9;
+    }
 }
 .errors {
     width: 100%;
@@ -103,4 +106,40 @@ main{
     &__title {
         font-size: 2em;
     }
+
+    &__table {
+        width: 100%;
+        border-spacing: 0px;
+        th {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        td,th {
+            border: 1px solid $bt-color-alt;
+        }
+        td,th {
+            width: 33.33%;
+            padding: .5em;
+        }
+        th {
+            text-align: center;
+        }
+    }
 }
+
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+    h1{
+        font-weight: bold;
+        font-size: 3em;
+        margin: 0;
+    }
+    span {
+        margin: 1em 0;
+    }
+}
+

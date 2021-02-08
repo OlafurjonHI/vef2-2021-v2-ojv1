@@ -1,0 +1,24 @@
+<table class="list__table">
+    <thead>
+        <tr>
+            <th>Dags</th>
+            <th>Nafn</th>
+            <th>Athugasemd</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% data.list.forEach(d => { %>
+         <tr>
+             <td><%= data.normalDate(new Date(d.signed)) %> </td>
+             <td>
+                 <% if (d.anonymous) { %>
+                    Nafnlaust
+                 <% } else { %>
+                    <%= d.name %> 
+                <% } %> 
+             </td>
+             <td><%= d.comment %></td>
+         </tr>
+        <% }) %>
+    </tbody>
+</table>
