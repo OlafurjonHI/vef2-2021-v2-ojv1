@@ -108,6 +108,7 @@ app.post(
       });
     }).catch(() => {
       res.status(500);
+      console.log("here i caught the error")
       res.render('error');
     });
   },
