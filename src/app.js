@@ -101,12 +101,12 @@ app.post(
     app.locals.anon = undefined;
     const letAnon = anon !== undefined;
     await InsertSignatures([name, ssn, comment, letAnon]).then(async (res) => {
-      console.log(res)
+      console.log(res.rows)
       await RetrieveSignatures().then((d) => {
         app.locals.list = d.rows;
       }).then(() => {
         res.render('index', { errorMessages: null, data: app.locals });
-      });
+      })
     }).catch(() => {
       res.status(500);
       console.log("here i caught the error")
