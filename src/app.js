@@ -108,6 +108,7 @@ app.post(
       res.redirect(308, '/');
     }).catch(() => {
       res.status(500);
+      console.log(e.message)
       res.render('error');
     });
   },
