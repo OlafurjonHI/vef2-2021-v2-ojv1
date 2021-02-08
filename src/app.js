@@ -105,7 +105,7 @@ app.post(
         app.locals.list = d.rows;
       });
     }).then(() => {
-      res.render('index');
+      res.render('index',{errorMessages: null, data: app.locals});
     }).catch((e) => {
       res.status(500);
       console.log(e.message)
