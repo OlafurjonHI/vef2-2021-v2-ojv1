@@ -46,7 +46,6 @@ const InsertSignatures = async (values) => {
     result = await client.query(query, values);
   } catch (e) {
     console.error('Error Inserting Data', e);
-    console.log("NO TWAS here i caught the error")
   } finally {
     client.release();
   }

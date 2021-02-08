@@ -100,7 +100,8 @@ app.post(
     app.locals.comment = '';
     app.locals.anon = undefined;
     const letAnon = anon !== undefined;
-    await InsertSignatures([name, ssn, comment, letAnon]).then(async () => {
+    await InsertSignatures([name, ssn, comment, letAnon]).then(async (res) => {
+      console.log(res)
       await RetrieveSignatures().then((d) => {
         app.locals.list = d.rows;
       }).then(() => {
