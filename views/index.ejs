@@ -9,14 +9,11 @@
         <label class="form__label" for="ssn">Kennitala*</label>
         <input  class="form__input <%=(data.errorLocation.includes('ssn'))? 'form__error' : null%>" type="text" pattern="[0-9]+([-\,][0-9]+)?" name="ssn" value="<%=(data.ssn)? data.ssn : ''%>" id="ssn" placeholder="000000-0000" required>
         <label  class="form__label"  for="comment">Athugasemd:</label>
-        <textarea rows="4" class="form__input <%=(data.errorLocation.includes('comment'))? 'form__error' : null%>"  name="comment" id="comment"> <%= (data.comment) ? data.comment : ''%></textarea>
+        <textarea rows="4" class="form__input <%=(data.errorLocation.includes('comment'))? 'form__error' : null%>"  name="comment" id="comment"><%= (data.comment) ? data.comment.replace(/^\s+|\s+$/gm,'') : null%></textarea>
 
         <label class="form__combo" for="anon">
-        <% if (data.anon) { %>
-          <input  type="checkbox" checked name="anon" id="anon">
-          <% } else { %>
-            <input  type="checkbox" name="anon" id="anon">
-            <% } %>
+        <input  type="checkbox"<%=(data.anon)? 'checked' : null%> name="anon" id="anon">
+
         Ekki birta nafn á lista</label>
         <% if (errorMessages) { %>
           <div class="errors">

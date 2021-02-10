@@ -6,12 +6,13 @@
   "type": "commonjs",
   "scripts": {
     "sass": "node-sass --source-map-embed ./src/scss/styles.scss ./public/css/styles.css",
+    "sass-watch": "node-sass --source-map-embed --watch --recursive ./src/scss/styles.scss ./public/css/styles.css",
     "start": "node ./src/app.js",
     "lint": "stylelint ./src/scss/styles.scss --syntax scss",
     "eslint": "eslint *.js",
     "nodemon": "nodemon ./src/app.js",
     "setup": "psql -U postgres vef2-2021-v2 < ./sql/fake.sql",
-    "dev": "concurrently npm:sass npm:nodemon"
+    "dev": "concurrently npm:sass-watch npm:nodemon"
   },
   "keywords": [],
   "author": "",
