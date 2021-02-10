@@ -15,6 +15,9 @@ if (!connectionString) {
 // TODO gagnagrunnstengingar
 const pool = new pg.Pool({
   connectionString,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 pool.on('error', (err) => {
   console.error('Unexpected error on idle client', err);
