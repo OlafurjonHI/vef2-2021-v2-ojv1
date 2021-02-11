@@ -100,6 +100,7 @@ app.post(
     app.locals.comment = '';
     app.locals.anon = undefined;
     const letAnon = anon !== undefined;
+    // eslint-disable-next-line consistent-return
     await InsertSignatures([name, ssn, comment, letAnon]).then(async (resp) => {
       if (!resp.rows) {
         res.status(500);
