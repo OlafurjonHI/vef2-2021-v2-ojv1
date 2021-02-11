@@ -33,7 +33,6 @@ const RetrieveSignatures = async () => {
   } finally {
     client.release();
   }
-  // await pool.end();
   return rows;
 };
 
@@ -48,7 +47,6 @@ const InsertSignatures = async (values) => {
   } finally {
     client.release();
   }
-  // await pool.end();
   return result;
 };
 
